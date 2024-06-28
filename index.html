@@ -3,9 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CV</title>
+    <link reд="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1> CV for Junior Frontend Developer</h1>
+        <nav>
+            <ul>
+                <li> <a href="#contact"> Contact </a></li>
+                <li> <a href="#about"> About me </a></li>
+                <li> <a href="#skills"> Skills </a> </li>
+                <li> <a href="#code"> Code Example </a></li>
+                <li> <a href="#education"> Education </a></li>
+                <li> <a href="#languages"> Languages </a></li>
+            </ul>
+        </nav>
+    </header>
     
+    <main>
+        <section class="profile">
+            <img alt="" src="">
+            <h1> Elizaveta Abramova </h1>
+            <h4> Junior Frontend Developer </h4>
+        </section>
+        <section class="information">
+            <div id="contact"> Contacts 
+                <ul>
+                    <li> Location: Tbilisi, Georgia </li>
+                    <li> Phone: +995591114729</li>
+                    <li> E-mail: <a href="mailto:a.d.elizaveta@gmail.com"> a.d.elizaveta@gmail.com</a></li>
+                    <li> GitHub: <a href="https://github.com/ElizavetaAbramova" target="_blank">ElizavetaAbramova </a></li>
+                </ul>
+            </div>
+            <div id="about"> About me  <br> 
+                I am 25 years old, programming is my hobby and I want to impoove my skills in that. 
+                My goal is to become a good Frontend Developer.
+            </div>
+            <div id="skills"> Skills 
+                <ul>
+                    <li> HTML</li>
+                    <li> CSS </li>
+                    <li> JavaScript (Basic) </li>
+                    <li> Git </li>
+                </ul>
+            </div>
+            <div id="code"> Code example 
+                <pre> 
+                    function isTicketLucky() {
+                        let ticketNum = input.value;
+                        let sum1 = 0;
+                        let sum2 = 0;
+                        let i = 0;
+                        if (ticketNum.length % 2 !== 0) {
+                          return (result.textContent = "Try another number");
+                        }
+                      
+                        for (i = 0; i < ticketNum.length / 2; i += 1) {
+                          sum1 += Number(ticketNum[i]);
+                        }
+                        for (i = ticketNum.length / 2; i < ticketNum.length; i += 1) {
+                          sum2 += Number(ticketNum[i]);
+                        }
+                        if (sum1 == sum2) {
+                          return (result.textContent = "You have a lucky ticket!");
+                        } else {
+                          return (result.textContent = "I'm sorry, it's unlucky ticket");
+                        }
+                      }
+                </pre>
+            </div>
+            <div id="education"> Education 
+                <ul>
+                    <li> <a href="https://rs.school/courses/javascript-preschool-ru"> RSSchool </a> </li>
+                    <li> <a href="https://htmlacademy.ru/"> HTML Academy</a> </li>
+                    <li> <a href="https://code-basics.com/ru"> Code Basics </a></li>
+                </ul>
+            </div>
+            <div id="languages"> Languages 
+                <ul>
+                    <li> English (B1)</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p> © 2024 </p>
+        <p><a href="https://github.com/ElizavetaAbramova" target="_blank">ElizavetaAbramova </a> </p>
+        <a href="https://rs.school/courses/javascript-preschool-ru" target="_blank">
+            <img alt="RSSchool logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo2BJQO74N_jNeGIjumaPvIDy5YUZEfFvuUQ&s">
+        </a>
+    </footer>
 </body>
 </html>
