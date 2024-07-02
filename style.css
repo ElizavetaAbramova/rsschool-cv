@@ -167,6 +167,11 @@ main .container {
     flex-wrap: wrap;
 }
 
+.profile-foto {
+    height: 170px;
+    width: 170px;
+}
+
 .profile-table {
     width: 40%;
 }
@@ -202,4 +207,9 @@ main .container {
 
 .footer-link {
     padding: 5px 10px;
+}
+
+.RSS-logo {
+    height: 60px;
+    width: 150px;
 }
