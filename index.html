@@ -5,95 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1> CV for Junior Frontend Developer</h1>
+    <header class="header">
+        <div class="container">
         <nav>
-            <ul>
-                <li> <a href="#contact"> Contact </a></li>
-                <li> <a href="#about"> About me </a></li>
-                <li> <a href="#skills"> Skills </a> </li>
-                <li> <a href="#code"> Code Example </a></li>
-                <li> <a href="#education"> Education </a></li>
-                <li> <a href="#languages"> Languages </a></li>
+            <ul class="nav-list">
+                <li class="nav-item"> <a href="#contact" class="nav-link"> Contact </a></li>
+                <li class="nav-item"> <a href="#about" class="nav-link"> About me </a></li>
+                <li class="nav-item"> <a href="#skills" class="nav-link"> Skills </a> </li>
+                <li class="nav-item"> <a href="#code" class="nav-link"> Code Example </a></li>
+                <li class="nav-item"> <a href="#education" class="nav-link"> Education </a></li>
+                <li class="nav-item"> <a href="#languages" class="nav-link"> Languages </a></li>
             </ul>
         </nav>
+    </div>
     </header>
-    <main>
-        <section class="profile">
-            <img alt="profile foto" src="20230910_140146.jpg" height="220px" width="170px">
-            <h1> Elizaveta Abramova </h1>
-            <h4> Junior Frontend Developer </h4>
+    <main class="main">
+        <div class="container">
+        <section class="section" id="profile">
+            <img alt="profile foto" src="20230910_140146.jpg" height="170px" width="170px">
+            <table class="profile-table">
+                <tbody>
+                    <tr><td class="profile-item"> <h1 class="section-title"> Elizaveta Abramova </h1> </td></tr>
+                    <tr><td class="profile-item"> <p> Junior Frontend Developer </p> </td></tr>
+                </tbody>
+            </table>
         </section>
-        <section class="information">
-            <div id="contact"> Contacts
+        <section class="section" id="contact"> <h2 class="section-title"> Contacts</h2>
                 <ul>
                     <li> Location: Tbilisi, Georgia </li>
                     <li> Phone: +995591114729</li>
                     <li> E-mail: <a href="mailto:a.d.elizaveta@gmail.com"> a.d.elizaveta@gmail.com</a></li>
                     <li> GitHub: <a href="https://github.com/ElizavetaAbramova" target="_blank">ElizavetaAbramova </a></li>
                 </ul>
-            </div>
-            <div id="about"> About me  <br>
-                I am 25 years old, programming is my hobby and I want to impoove my skills in that.
-                My goal is to become a good Frontend Developer.
-            </div>
-            <div id="skills"> Skills
+        </section>
+        <section class="section" id="about"> <h2 class="section-title"> About me </h2>
+                <p>I am 25 years old, programming is my hobby and I want to impoove my skills in that.
+                My goal is to become a good Frontend Developer. </p>
+        </section>
+        <section class="section" id="skills"> <h2 class="section-title">Skills</h2>
                 <ul>
                     <li> HTML</li>
                     <li> CSS </li>
                     <li> JavaScript (Basic) </li>
                     <li> Git </li>
                 </ul>
-            </div>
-            <div id="code"> Code example
-                <pre>
-                <code>
-                    function isTicketLucky() {
-                        let ticketNum = input.value;
-                        let sum1 = 0;
-                        let sum2 = 0;
-                        let i = 0;
-                        if (ticketNum.length % 2 !== 0) {
-                          return (result.textContent = "Try another number");
-                        }
-
-                        for (i = 0; i &lt; ticketNum.length / 2; i += 1) {
-                          sum1 += Number(ticketNum[i]);
-                        }
-                        for (i = ticketNum.length / 2; i &lt; ticketNum.length; i += 1) {
-                          sum2 += Number(ticketNum[i]);
-                        }
-                        if (sum1 == sum2) {
-                          return (result.textContent = "You have a lucky ticket!");
-                        } else {
-                          return (result.textContent = "I'm sorry, it's unlucky ticket");
-                        }
-                      }
-                </code>
-            </pre>
-            </div>
-            <div id="education"> Education
-                <ul>
-                    <li> <a href="https://rs.school/courses/javascript-preschool-ru"> RSSchool </a> </li>
-                    <li> <a href="https://htmlacademy.ru/"> HTML Academy</a> </li>
-                    <li> <a href="https://code-basics.com/ru"> Code Basics </a></li>
-                </ul>
-            </div>
-            <div id="languages"> Languages
-                <ul>
-                    <li> English (B1)</li>
-                </ul>
-            </div>
         </section>
+        <section class="section" id="code"> <h2 class="section-title">Code example</h2>
+            <pre> <code> function isTicketLucky() {
+    let ticketNum = input.value;
+    let sum1 = 0;
+    let sum2 = 0;
+    let i = 0;
+    if (ticketNum.length % 2 !== 0) {
+        return (result.textContent = "Try another number");
+    }
+
+    for (i = 0; i &lt; ticketNum.length / 2; i += 1) {
+        sum1 += Number(ticketNum[i]);
+    }
+    for (i = ticketNum.length / 2; i &lt; ticketNum.length; i += 1) {
+        sum2 += Number(ticketNum[i]);
+    }
+    if (sum1 == sum2) {
+        return (result.textContent = "You have a lucky ticket!");
+    } else {
+        return (result.textContent = "I'm sorry, it's unlucky ticket");
+        }
+    }
+            </code>
+            </pre>
+        </section>
+        <section class="section" id="education"> <h2 class="section-title"> Education</h2>
+            <ul>
+                <li> <a href="https://rs.school/courses/javascript-preschool-ru"> RSSchool </a> </li>
+                <li> <a href="https://htmlacademy.ru/"> HTML Academy</a> </li>
+                <li> <a href="https://code-basics.com/ru"> Code Basics </a></li>
+            </ul>
+        </section>
+        <section class="section" id="languages"> <h2 class="section-title">Languages</h2>
+            <ul>
+                <li> English (B1)</li>
+            </ul>
+        </section>
+        </div>
     </main>
-    <footer>
-        <p> © 2024 </p>
-        <p><a href="https://github.com/ElizavetaAbramova" target="_blank">ElizavetaAbramova </a> </p>
-        <a href="https://rs.school/courses/javascript-preschool-ru" target="_blank">
-            <img alt="RSSchool logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo2BJQO74N_jNeGIjumaPvIDy5YUZEfFvuUQ&s">
+    <footer class="footer">
+        <div class="container">
+        <p class="footer-item"> © 2024 <a href="https://github.com/ElizavetaAbramova" target="_blank" class="footer-link">ElizavetaAbramova </a> </p>
+        <a class="footer-item" href="https://rs.school/courses/javascript-preschool-ru" target="_blank">
+            <img title="Join RSSchool" alt="RSSchool logo" src="rs_school_js.svg" height="60px" width="150px">
         </a>
+    </div>
     </footer>
 </body>
 </html>
