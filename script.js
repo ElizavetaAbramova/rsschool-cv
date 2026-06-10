@@ -14,3 +14,18 @@ const themeSwitcher = () => {
 };
 
 themeSwitcherButton.addEventListener("click", themeSwitcher);
+
+const downloadButton = document.querySelector(".download-button");
+const downloadHandler = () => {
+  const url = "assets/CV_Abramova_Elizaveta.pdf";
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "CV_Abramova_Elizaveta.pdf";
+
+  document.body.appendChild(a);
+  a.click();
+
+  a.remove();
+};
+downloadButton.addEventListener("click", downloadHandler);
