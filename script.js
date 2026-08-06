@@ -30,66 +30,78 @@ const downloadHandler = () => {
 };
 downloadButton.addEventListener("click", downloadHandler);
 
+const track = document.querySelector(".carousel-track");
 const cards = [...document.querySelectorAll(".project-card")];
+const viewport = document.querySelector(".carousel-viewport");
+const prevBtn = document.querySelector(".carousel-arrow.prev");
+const nextBtn = document.querySelector(".carousel-arrow.next");
 
-let current = 0;
+let currentIndex = 0;
 
-function render() {
-  cards.forEach((card) => {
-    card.className = "project-card hidden";
-  });
-
-  const prev = (current - 1 + cards.length) % cards.length;
-
-  const next = (current + 1) % cards.length;
-
-  cards[current].className = "project-card active";
-
-  cards[prev].className = "project-card prev";
-
-  cards[next].className = "project-card next";
+function getCardsPerView() {
+  const width = window.innerWidth;
+  if (width <= 640) return 1;
+  if (width <= 1024) return 2;
+  return 3;
 }
 
-render();
+function getCardStep() {
+  const cardWidth = cards[0].getBoundingClientRect().width;
+  const gap = 20;
+  return cardWidth + gap;
+}
 
-document.querySelector(".projects-carousel").addEventListener("click", (e) => {
-  const card = e.target.closest(".project-card");
+function getMaxIndex() {
+  return Math.max(cards.length - getCardsPerView(), 0);
+}
 
-  if (!card) return;
+function updateArrows() {
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex >= getMaxIndex();
+}
 
-  if (card.classList.contains("prev")) {
-    current = (current - 1 + cards.length) % cards.length;
+function render() {
+  const offset = currentIndex * getCardStep();
+  track.style.transform = `translateX(-${offset}px)`;
+  updateArrows();
+}
 
-    render();
-  }
+function goNext() {
+  currentIndex = Math.min(currentIndex + 1, getMaxIndex());
+  render();
+}
 
-  if (card.classList.contains("next")) {
-    current = (current + 1) % cards.length;
+function goPrev() {
+  currentIndex = Math.max(currentIndex - 1, 0);
+  render();
+}
 
-    render();
-  }
+nextBtn.addEventListener("click", goNext);
+prevBtn.addEventListener("click", goPrev);
+
+window.addEventListener("resize", () => {
+  currentIndex = Math.min(currentIndex, getMaxIndex());
+  render();
 });
 
+// свайп для мобильных
 let startX = 0;
 
-const carousel = document.querySelector(".projects-carousel");
-
-carousel.addEventListener("touchstart", (e) => {
+viewport.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
 });
 
-carousel.addEventListener("touchend", (e) => {
+viewport.addEventListener("touchend", (e) => {
   const endX = e.changedTouches[0].clientX;
-
   const diff = startX - endX;
 
   if (Math.abs(diff) < 50) return;
 
   if (diff > 0) {
-    current = (current + 1) % cards.length;
+    goNext();
   } else {
-    current = (current - 1 + cards.length) % cards.length;
+    goPrev();
   }
-
-  render();
 });
+
+render();
